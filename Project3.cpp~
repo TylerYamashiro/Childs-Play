@@ -1,0 +1,54 @@
+//Tyler Yamashiro
+//Project3.cpp
+//
+
+
+#include "playerList.h"
+
+int main()
+{
+  int N;
+  int M;
+  string name;
+  int winnerID;
+  playerList list1;
+
+  cout << "Please input a value for N: ";
+  cin >> N;
+  cout << "Please input a value for M: ";
+  cin >> M;
+
+  
+
+  cout << "Please enter " << N << " player names."<< endl;
+  for(int i = 0; i < N ; i++){
+	cout << "Please enter a name for player " << i+1 << ": ";
+	cin >> name;
+	list1.appendPlayer(i+1, name);
+  }
+
+  cout << endl << endl;
+  cout << "Now printing the list." << endl;
+  list1.printList();
+
+  cout << endl << endl;
+  
+  cout << "Now reversing the list." << endl;
+  cout << endl;
+  
+  list1.reverseList();
+
+  list1.printList();
+  cout <<endl <<endl;
+  cout <<"Now reversing the pairs in the reverse linked list." << endl;
+ 
+  list1.reversePairs();
+
+  list1.printList();
+  cout << endl << endl;
+  cout << "Now simulating Child's Play." << endl << endl;
+  
+  winnerID = list1.playGame(M);
+  cout << "The winner is player " << winnerID << "::" <<
+	list1.returnWinName() << endl;
+}
